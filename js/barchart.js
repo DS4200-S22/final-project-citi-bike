@@ -139,7 +139,7 @@ const mouseleave2 = function(event, d) {
 }
 
 d3.csv("data/citibike-data.csv").then(function(data) {
-console.log(data)
+  console.log(data);
   // Add an svg to csv-bar div  
   let svg2 = d3
     .select("#vis-container")
