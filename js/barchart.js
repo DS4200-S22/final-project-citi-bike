@@ -15,10 +15,13 @@ const height = 450;
 const margin = {left:50, right:50, bottom:50, top:50}; 
 const yTooltipOffset = 15; 
 
+const color = d3.scaleOrdinal()
+                .domain(["Members", "Casual"])
+                .range(["#FF7F50", "#21908dff"]);
 
 // Adds an svg to hard-coded-bar div  
 const svg = d3
-  .select("#hard-coded-bar")
+  .select("#vis-container")
   .append("svg")
   .attr("width", width-margin.left-margin.right)
   .attr("height", height - margin.top - margin.bottom)
@@ -109,6 +112,7 @@ svg.selectAll(".bar")
      .attr("y", (d) => yScale1(d.count)) 
      .attr("height", (d) => (height - margin.bottom) - yScale1(d.count)) 
      .attr("width", xScale1.bandwidth()) 
+     .style("fill", (d) => color(d.name))
      .on("mouseover", mouseover1) 
      .on("mousemove", mousemove1)
      .on("mouseleave", mouseleave1);
@@ -144,10 +148,10 @@ const mouseleave2 = function(event, d) {
 }
 
 d3.csv("data/barchart.csv").then(function(data) {
-
+console.log(data)
   // Add an svg to csv-bar div  
   let svg2 = d3
-    .select("#csv-bar")
+    .select("#vis-container")
     .append("svg")
     .attr("width", width-margin.left-margin.right)
     .attr("height", height - margin.top - margin.bottom)
