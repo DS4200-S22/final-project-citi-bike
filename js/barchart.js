@@ -137,9 +137,9 @@ const mousemove2 = function(event, d) {
 const mouseleave2 = function(event, d) { 
   tooltip2.style("opacity", 0); 
 }
-
 d3.csv("data/citibike-data.csv").then(function(data) {
   console.log(data);
+  
   // Add an svg to csv-bar div  
   let svg2 = d3
     .select("#vis-container")
