@@ -1,12 +1,3 @@
-/*
-
-In-class activity 08 starter code
-Prof. Mosca 
-Modified: 12/08/21 
-
-*/
-
-// Build your bar charts in this file 
 
 
 // Set dimensions and margins for plots 
@@ -147,7 +138,7 @@ const mouseleave2 = function(event, d) {
   tooltip2.style("opacity", 0); 
 }
 
-d3.csv("data/barchart.csv").then(function(data) {
+d3.csv("data/citibike-data.csv").then(function(data) {
 console.log(data)
   // Add an svg to csv-bar div  
   let svg2 = d3
