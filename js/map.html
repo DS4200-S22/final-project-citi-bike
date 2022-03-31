@@ -1,16 +1,14 @@
 <!DOCTYPE html> 
-<html> 
-    <head> 
-        <title>Add Map</title>
+<meta charset="utf-8">
 
-        <link rel="stylesheet" type="text/css", href="./style.css"/>
-        <script src="./visualization.js"></script>
-    </head>
-    <body>
-        <h3> Google Maps Demo</h3>
-        <svg id="map"></svg>
-        <script
-        src = "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly"
-        async></script>
-    </body>
-</html>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+<div id="my_map"></div>
+
+<style>
+    .circle:hover{
+        stroke:black;
+        stroke-width: 4px; 
+    }
+</style>
