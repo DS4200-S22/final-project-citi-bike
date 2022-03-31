@@ -10,18 +10,22 @@ const svg = d3.select("#my_dataviz")
 
 // Map and projection
 const projection = d3.geoMercator()
-    .center([4, 47])                // GPS of location to zoom on
+    .center([40.72621788,  -73.98379855])                // GPS of location to zoom on
     .scale(1020)                       // This is like the zoom
     .translate([ width/2, height/2 ])
 
 // Create data for circles:
 const markers = [
-  {long: 9.083, lat: 42.149, name: "Corsica"}, // corsica
-  {long: 7.26, lat: 43.71, name: "Nice"}, // nice
-  {long: 2.349, lat: 48.864, name: "Paris"}, // Paris
-  {long: -1.397, lat: 43.664, name: "Hossegor"}, // Hossegor
-  {long: 3.075, lat: 50.640, name: "Lille"}, // Lille
-  {long: -3.83, lat: 58, name: "Morlaix"}, // Morlaix
+  //starting stationd 
+  {long: 40.72621788, lat: -73.98379855, name: "E 7 & Avenue A"}, // corsica
+  {long: 40.772828, lat: -73.966853, name: "5 Ave & E 72 St"}, // nice
+  {long: 40.759604471387945, lat: -73.92714411020279, name: "34 Ave & 31 St"}, // Paris
+
+  // ending stations 
+  {long: 40.75500254, lat: -73.98014437, name: "Grand Army Plaza and Central Park South"},
+  {long: 40.754164, lat: -73.908906, name: "34 Ave & 38 St"},
+  {long: 40.72621788, lat: -73.98379855, name: "1 Ave & E 18 St"},
+ 
 ];
 
 // Load external data and boot
