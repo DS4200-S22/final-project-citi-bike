@@ -72,7 +72,7 @@ const tooltip1 = d3.select("body")
 
 // Add values to tooltip on mouseover, make tooltip div opaque  
 const mouseover1 = function(event, d) {
-  tooltip1.html("Name: " + d.name + "<br> Score: " + d.count + "<br>") 
+  tooltip1.html("Name: " + d.name + "<br> Count: " + d.count + "<br>") 
           .style("opacity", 1);  
 }
 
