@@ -17,9 +17,9 @@ const projection = d3.geoMercator()
 // Create data for circles:
 const markers = [
   //starting stationd 
-  {long: 40.72621788, lat: -73.98379855, name: "E 7 & Avenue A"}, // corsica
-  {long: 40.772828, lat: -73.966853, name: "5 Ave & E 72 St"}, // nice
-  {long: 40.759604471387945, lat: -73.92714411020279, name: "34 Ave & 31 St"}, // Paris
+  {long: 40.72621788, lat: -73.98379855, name: "E 7 & Avenue A"}, 
+  {long: 40.772828, lat: -73.966853, name: "5 Ave & E 72 St"}, 
+  {long: 40.759604471387945, lat: -73.92714411020279, name: "34 Ave & 31 St"}, 
 
   // ending stations 
   {long: 40.75500254, lat: -73.98014437, name: "Grand Army Plaza and Central Park South"},
