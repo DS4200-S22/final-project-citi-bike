@@ -10,7 +10,7 @@ const color = d3.scaleOrdinal()
                 .range(["#FF7F50", "#21908dff"]);
 
 // Adds an svg to hard-coded-bar div  
-const svg = d3
+const svg1 = d3
   .select("#hard-coded-bar")
   .append("svg")
   .attr("width", width-margin.left-margin.right)
@@ -44,13 +44,13 @@ let xScale1 = d3.scaleBand()
             .padding(0.1); 
 
 // Add y axis to webpage 
-svg.append("g")
+svg1.append("g")
    .attr("transform", `translate(${margin.left}, 0)`) 
    .call(d3.axisLeft(yScale1)) 
    .attr("font-size", '20px'); 
 
 // Add x axis to webpage  
-svg.append("g")
+svg1.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`) 
     .call(d3.axisBottom(xScale1) 
             .tickFormat(i => data1[i].name))  
@@ -71,7 +71,7 @@ const tooltip1 = d3.select("body")
 
 // Add values to tooltip on mouseover, make tooltip div opaque  
 const mouseover1 = function(event, d) {
-  tooltip1.html("Name: " + d.name + "<br> Score: " + d.score + "<br>") 
+  tooltip1.html("Rider Type: " + d.name + "<br> Count: " + d.score + "<br>") 
           .style("opacity", 1);  
 }
 
@@ -93,7 +93,7 @@ const mouseleave1 = function(event, d) {
 */
 
 // Add bars to the webpage, bind events needed for tooltips 
-svg.selectAll(".bar") 
+svg1.selectAll(".bar") 
    .data(data1) 
    .enter()  
    .append("rect") 

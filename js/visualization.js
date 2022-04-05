@@ -1,7 +1,7 @@
 // The svg
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+var svg3 = d3.select("svg"),
+    width = +svg3.attr("width"),
+    height = +svg3.attr("height");
 
 // Map and projection
 var projection = d3.geoMercator()
@@ -27,7 +27,7 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
     data.features = data.features.filter( function(d){return d.properties.name=="France"} )
 
     // Draw the map
-    svg.append("g")
+    svg3.append("g")
         .selectAll("path")
         .data(data.features)
         .enter()
@@ -40,7 +40,7 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
         .style("opacity", .3)
 
     // Add circles:
-    svg
+    svg3
       .selectAll("myCircles")
       .data(markers)
       .enter()
