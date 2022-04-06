@@ -1,7 +1,7 @@
 
 // Set dimensions and margins for plots 
-const width2 = 900; 
-const height2 = 450; 
+const width2 = 1500; 
+const height2 = 550; 
 const margin2 = {left:50, right:50, bottom:150, top:50}; 
 const yTooltipOffset2 = 15; 
 
@@ -74,7 +74,8 @@ svg4.append("g")
       .style("text-anchor", "end")
       .attr("dx", "-.8em")
       .attr("dy", ".15em")
-      .attr("transform", "rotate(-65)");
+      .attr("transform", "rotate(-65)")
+      .attr("font-size", '12px');
 /* 
 
 */
@@ -88,7 +89,7 @@ const tooltip4 = d3.select("body")
 
 // Add values to tooltip on mouseover, make tooltip div opaque  
 const mouseover5 = function(event, d) {
-  tooltip4.html("Station Name: " + d.station_name + "<br> Total Rides: " + d.count + "<br>") 
+  tooltip4.html("Station Name: " + d.station_name + "<br> Total Rides Ended Here: " + d.count + "<br>") 
           .style("opacity", 1);  
 }
 
