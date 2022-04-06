@@ -1,56 +1,85 @@
-// The svg
-var svg3 = d3.select("svg"),
-    width = +svg3.attr("width"),
-    height = +svg3.attr("height");
+//set width and height for graph 
+const width = 460
+const height = 400
 
-// Map and projection
-var projection = d3.geoMercator()
-    .center([2, 47])                // GPS of location to zoom on
-    .scale(1020)                       // This is like the zoom
-    .translate([ width/2, height/2 ])
+//svg 
+const svg = d3.select("#data_viz")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height)
 
+//map and projection 
+const projection = d3.geoMercator()
+    .center([4, 47])
+    .scale(1020)
+    .translate([width/2, height/2])
 
-// Create data for circles:
-var markers = [
-  {long: 9.083, lat: 42.149}, // corsica
-  {long: 7.26, lat: 43.71}, // nice
-  {long: 2.349, lat: 48.864}, // Paris
-  {long: -1.397, lat: 43.664}, // Hossegor
-  {long: 3.075, lat: 50.640}, // Lille
-  {long: -3.83, lat: 58}, // Morlaix
-];
+//create data for circles 
+const markers = [
+  {long: 9.083, lat: 42.149, name: "Corsica"}, 
+  {long: 7.26, lat: 43.71, name: "Nice"}, 
+  {long: 2.349, lat: 48.864, name: "Paris"}, 
+  {long: -1.397, lat: 43.664, name: "Hossegor"}, 
+  {long: 3.075, lat: 50.640, name: "Lille"}, 
+  {long: -3.83, lat: 58, name: "Morelaix"}, 
+]; 
 
-// Load external data and boot
-d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson", function(data){
+//load external data 
+d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(function(data){
+  //filter data 
+  data.features = data.features.filter (d => d.properties.name == "France")
 
-    // Filter data
-    data.features = data.features.filter( function(d){return d.properties.name=="France"} )
+  //create map 
+  svg.append("g")
+      .selectAll("path")
+      .data(data.features)
+      .join("path")
+        .attr("fill", "#b8b8b8")
+        .attr("d", d3.geoPath()
+            .projection(projection)
+        )
+      .style("stroke", "black")
+      .style("opacity", .3)
 
-    // Draw the map
-    svg3.append("g")
-        .selectAll("path")
-        .data(data.features)
-        .enter()
-        .append("path")
-          .attr("fill", "#b8b8b8")
-          .attr("d", d3.geoPath()
-              .projection(projection)
-          )
-        .style("stroke", "black")
-        .style("opacity", .3)
+  //create tooltip 
+  const Tooltip = d3.select("#data_viz")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 1)
+    .style("border", "solid")
+    .style("border-width", "2px")
+    .style("border-radius", "5px")
+    .style("padding", "5px")
 
-    // Add circles:
-    svg3
-      .selectAll("myCircles")
-      .data(markers)
-      .enter()
-      .append("circle")
-        .attr("cx", function(d){ return projection([d.long, d.lat])[0] })
-        .attr("cy", function(d){ return projection([d.long, d.lat])[1] })
-        .attr("r", 14)
-        .style("fill", "69b3a2")
-        .attr("stroke", "#69b3a2")
-        .attr("stroke-width", 3)
-        .attr("fill-opacity", .4)
+  //functions that change tooltip 
+  //mousemove, mouseover, mouseleave 
+  const mouseover = function(event, d){
+    Tooltip.style("opacity", 1)
+  }
+  var mousemove = function(event, d){
+    Tooltip
+      .html(d.name, "<br>" + "long:" + d.long + "<br>" + "lat:" + d.lat)
+      .style("left", (event.x)/2 + "px")
+      .style("top", (event.y)/2 - 30 + "px")
+  }
+  var mouseleave = function(event, d){
+    Tooltip.style("opacity", 0)
+  }
+
+  //add markers 
+  svg 
+    .selectAll("myCircles")
+    .data(markers)
+    .join("circle")
+      .attr("cx", d => projection([d.long, d.lat])[0])
+      .attr("cy", d => projection([d.long, d.lat])[1])
+      .attr("r", 14)
+      .attr("class", "circle")
+      .style("fill", "69b3a2")
+      .attr("stroke", "#69b3a2")
+      .attr("stroke-width", 3)
+      .attr("fill-opacity", .4)
+    .on("mouseover", mouseover)
+    .on("mousemove", mousemove)
+    .on("mouseleave", mouseleave)
 })
-
