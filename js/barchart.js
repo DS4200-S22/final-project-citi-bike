@@ -63,7 +63,7 @@ svg1.append("g")
 */
 
 // Add div for tooltip to webpage
-const tooltip1 = d3.select("body") 
+const tooltip1 = d3.select("#hard-coded-bar") 
                 .append("div") 
                 .attr('id', "tooltip1") 
                 .style("opacity", 0) 
@@ -107,35 +107,6 @@ svg1.selectAll(".bar")
      .on("mousemove", mousemove1)
      .on("mouseleave", mouseleave1);
 
-/*******************
- 
-  Bar chart 2
- 
- *******************/ 
-
- // Add div for tooltip to webpage
-const tooltip2 = d3.select("body") 
-                .append("div") 
-                .attr('id', "tooltip2") 
-                .style("opacity", 0) 
-                .attr("class", "tooltip"); 
-
-// Add values to tooltip on mouseover, make tooltip div opaque  
-const mouseover2 = function(event, d) {
-  tooltip2.html("Name: " + d.name + "<br> Score: " + d.score + "<br>") 
-          .style("opacity", 1);  
-}
-
-// Position tooltip to follow mouse 
-const mousemove2 = function(event, d) {
-  tooltip2.style("left", (event.pageX)+"px") 
-          .style("top", (event.pageY + yTooltipOffset)+"px"); 
-}
-
-// Return tooltip to transparant when mouse leaves
-const mouseleave2 = function(event, d) { 
-  tooltip2.style("opacity", 0); 
-}
 
 
 

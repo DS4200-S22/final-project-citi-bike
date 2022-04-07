@@ -1,7 +1,7 @@
 
 // Set dimensions and margins for plots 
 const width2 = 1500; 
-const height2 = 550; 
+const height2 = 850; 
 const margin2 = {left:50, right:50, bottom:150, top:50}; 
 const yTooltipOffset2 = 15; 
 
@@ -61,8 +61,16 @@ let xScale = d3.scaleBand()
 // Add y axis to webpage 
 svg4.append("g")
    .attr("transform", `translate(${margin2.left}, 0)`) 
-   .call(d3.axisLeft(yScale)) 
+   .call(d3.axisLeft(yScale))
    .attr("font-size", '20px'); 
+
+   svg4.append("text")
+   .attr("transform", "rotate(-90)")
+   .attr("y", 0 - margin.left)
+   .attr("x",0 - (height / 2))
+   .attr("dy", "1em")
+   .style("text-anchor", "middle")
+   .text("Count"); 
 
 // Add x axis to webpage  
 svg4.append("g")
@@ -76,12 +84,19 @@ svg4.append("g")
       .attr("dy", ".15em")
       .attr("transform", "rotate(-65)")
       .attr("font-size", '12px');
+
+ svg4.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 60) + ")")
+      .style("text-anchor", "middle")
+      .text("Station");
 /* 
 
 */
 
 // Add div for tooltip to webpage
-const tooltip4 = d3.select("body") 
+const tooltip4 = d3.select("#hard-coded-bar2") 
                 .append("div") 
                 .attr('id', "tooltip2") 
                 .style("opacity", 0) 

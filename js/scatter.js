@@ -1,6 +1,6 @@
 // Set dimensions and margins for plots 
-  const width3 = 900; 
-  const height3 = 450; 
+  const width3 = 1200; 
+  const height3 = 550; 
   const margin3 = {left:50, right:50, bottom:50, top:50}; 
   const yTooltipOffset3 = 15; 
 
@@ -36,15 +36,29 @@ d3.csv("data/avg_minutes.csv").then(function(scatter_data) {
     // Add y axis to webpage 
     svg5.append("g")
        .attr("transform", `translate(${margin3.left}, 0)`) 
-       .call(d3.axisLeft(yScale3)) 
+       .call(d3.axisLeft(yScale3))
        .attr("font-size", '20px'); 
+
+svg5.append("text")
+   .attr("transform", "rotate(-90)")
+   .attr("y", 0 - margin3.left)
+   .attr("x",0 - (height3 / 2))
+   .attr("dy", "1em")
+   .style("text-anchor", "middle")
+   .text("Count"); 
   
     // Add x axis to webpage  
     svg5.append("g")
         .attr("transform", `translate(0,${height3 - margin3.bottom})`) 
-        .call(d3.axisBottom(xScale3))   
+        .call(d3.axisBottom(xScale3))
         .attr("font-size", '20px'); 
-  
+
+  svg5.append("text")             
+        .attr("transform",
+              "translate(" + (width3/2) + " ," + 
+                             (height3 + margin3.top + 60) + ")")
+        .style("text-anchor", "middle")
+        .text("Minutes");
   
     /* 
   
@@ -53,7 +67,7 @@ d3.csv("data/avg_minutes.csv").then(function(scatter_data) {
     */
   
     // Add div for tooltip to webpage
-    const tooltip_s = d3.select("body") 
+    const tooltip_s = d3.select("#csv-scatter") 
                     .append("div") 
                     .attr('id', "tooltip3") 
                     .style("opacity", 0) 
@@ -67,8 +81,8 @@ d3.csv("data/avg_minutes.csv").then(function(scatter_data) {
   
     // Position tooltip to follow mouse 
     const mousemove_s = function(event, d) {
-      tooltip_s.style("left", (event.pageX1)+"px") 
-              .style("top", (event.pageY1 + yTooltipOffset3)+"px"); 
+      tooltip_s.style("left", (event.pageX)+"px") 
+              .style("top", (event.pageY + yTooltipOffset3)+"px"); 
     }
   
     // Return tooltip to transparant when mouse leaves
