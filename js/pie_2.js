@@ -26,7 +26,7 @@ function update(pie_data){
         .value(function(d) {return d[1];})
         .sort(function(a, b) {return d3.ascending(a.key, b.key);})
 
-    const pie_data_ready = pie_svg(Object.entries(pie_data))
+    const pie_data_ready = pie_(Object.entries(pie_data))
 
     //map to data
     const u = svg.selectAll("path")
