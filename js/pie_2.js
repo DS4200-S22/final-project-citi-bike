@@ -33,7 +33,7 @@ function update(pie_data) {
   const pie_data_ready = pie_(Object.entries(pie_data))
 
   // map to data
-  const u = svg.selectAll("path")
+  const u = pie_svg.selectAll("path")
     .data(pie_data_ready)
 
   // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
@@ -58,6 +58,18 @@ update(data1_pie)
 
 
 
+
+
+
+
+// create 2 data sets 
+//const data1_pie = {a: 53, b: 50, c: 25, d: 23, e: 21, f: 17, g: 16, h: 16, i: 16, k: 14} // starting stations 
+//const data2_pie = {a: 105, b: 50, c: 49, d: 47, e: 43, f: 38, g: 36, h:34, i: 24, k:19}
+
+//set color scale 
+//const pie_color = d3.scaleOrdinal()
+    //.domain(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"])
+    //.range(d3.schemeDark2); 
 
 
 
