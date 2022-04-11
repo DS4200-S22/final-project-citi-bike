@@ -1,7 +1,7 @@
 // The svg
-const map_svg = d3.select("svg"),
-    map_width = +map_svg.attr("width"),
-    map_height = +map_svg.attr("height");
+const svg_map= d3.select("svg"),
+    map_width = +svg_map.attr("width"),
+    map_height = +svg_map.attr("height");
 
 // Map and projection
 const projection = d3.geoMercator()
@@ -16,7 +16,7 @@ d3.json("https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geoj
     map_data.features = map_data.features.filter(d => {console.log(d.properties.name); return d.properties.name=="Manhattan"})
 
     // Draw the map
-    map_svg.append("g")
+    svg_map.append("g")
         .selectAll("path")
         .data(map_data.features)
         .join("path")
