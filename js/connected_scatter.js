@@ -1,3 +1,4 @@
+
 const cs_margin = {top: 10, right: 100, bottom: 30, left: 30}, 
     cs_width = 460 - cs_margin.left - cs_margin.right; 
     cs_height = 400 - cs_margin.top - cs_margin.bottom; 
@@ -21,7 +22,7 @@ d3.csv('data/citibike-data.csv').then(function(cs_data){
         return {
             name: grpName, 
             values: cs_data.map(function(d){
-                return{ time: d.time, value: d+[grpName]};
+                return{ count: d.count, value: d+[grpName]};
             })
         };
     });
@@ -48,7 +49,7 @@ d3.csv('data/citibike-data.csv').then(function(cs_data){
 
     //add lines 
     const cs_line = d3.line()
-        .x_axis(d => x_axis(+d.time))
+        .x_axis(d => x_axis(+d.count))
         .y_axis(d => y_axis(+d.values))
 
     cs_svg.selectAll("lines")
@@ -69,7 +70,7 @@ d3.csv('data/citibike-data.csv').then(function(cs_data){
         .selectAll("points")
         .data(d => d.values)
         .join("circle")
-            .attr("cx", d=> x_axis(d.time))
+            .attr("cx", d=> x_axis(d.count))
             .attr("cv", d=> y_axis(d.values))
             .attr("r", 5)
             .attr("stroke", "white")
@@ -80,7 +81,7 @@ d3.csv('data/citibike-data.csv').then(function(cs_data){
         .join("g")
             .apped("text")
             .datum(d => {return {name: d.name, value: d.values[d.values.length - 1]};})
-            .attr("transform",d => `translate(${x(d.value.time)},${y(d.value.value)})`)
+            .attr("transform",d => `translate(${x(d.values.count)},${y(d.values.value)})`)
             .attr("x", 12)
             .text(d => d.name)
             .style("fill", d=> cs_color(d.name))
