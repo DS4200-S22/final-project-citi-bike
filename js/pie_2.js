@@ -1,39 +1,36 @@
-// set dimensions
-const width4 = 450, 
-    height4 = 450, 
-    margin4 = 40, 
+const pie_width = 450, 
+    pie_height = 450, 
+    pie_margin = 40; 
 
-//radius 
-const radius = Math.min(width4, height4) / 2 - margin4; 
+const pie_radius = Math.min(pie_width, pie_height) / 2 - pie_margin;
 
-//append svg 
-const svg7 = d3.select("#piechart_2")
+const pie_svg = d3.select("#pie_chart")
     .append("svg")
-        .attr("width", width4)
-        .attr("height", height4)
+        .attr("width", pie_width)
+        .attr("height", pie_height)
     .append("g")
-        .attr("transform", `translate(${width4/2}, ${height4/2})`); 
+    attr("transform", `translate(${pie_width/2}, ${pie_height/2})`);
+
 
 // create 2 data sets 
 const data1_pie = {a: 53, b: 50, c: 25, d: 23, e: 21, f: 17, g: 16, h: 16, i: 16, k: 14} // starting stations 
 const data2_pie = {a: 105, b: 50, c: 49, d: 47, e: 43, f: 38, g: 36, h:34, i: 24, k:19}
 
 //set color scale 
-const pie_color_2 = d3.scaleOrdinal()
+const pie_color = d3.scaleOrdinal()
     .domain(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"])
-    .range(d3.schemeDark2)
+    .range(d2.schemeDark2); 
 
-//updates plot 
-function update(pie_data_2){
-    const pie2 = d3.pie()
-        .value(function(d){return d[1];})
+function update(pie_data){
+    const pie_ = d3.pie()
+        .value(function(d) {return d[1];})
         .sort(function(a, b) {return d3.ascending(a.key, b.key);})
-        
-    const pie_data_ready_2 = pie(Obect.entries(pie_data_2))
+
+    const pie_data_ready = pie(Object.entries(pie_data))
 
     //map to data
-    const u = svg7.selectAll("path")
-        .data(pie_data_ready_2)
+    const u = svg.selectAll("path")
+        .data(pie_data_ready)
 
     u
         .join('path')
@@ -41,16 +38,12 @@ function update(pie_data_2){
         .duration(1000)
         .attr('d', d3.arc()
             .innerRadius(0)
-            .outerRadius(radius)
-        )
-        .attr('fill', function(d){return(pie_color_2(d.pie_data_2[0]))})
+            .outerRadius(pie_radius)
+            )
+        .attr('fill', function(d){return(pie_color(d.pie_data[0]))})
         .attr("stroke", "white")
-        .style("stroke-width", "2px")
+        .style("stroke-wodth", "2px")
         .style("opacity", 1)
-
-
 }
 
-//initialize plot w first dataset 
 update(data1_pie)
-
