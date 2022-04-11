@@ -1,6 +1,6 @@
 
 const cs_margin = {top: 10, right: 100, bottom: 30, left: 30}, 
-    cs_width = 460 - cs_margin.left - cs_margin.right; 
+    cs_width = 460 - cs_margin.left - cs_margin.right, 
     cs_height = 400 - cs_margin.top - cs_margin.bottom; 
 
 //append svg shit 
