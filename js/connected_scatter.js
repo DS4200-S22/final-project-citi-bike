@@ -12,7 +12,7 @@ const cs_svg = d3.select("#connected_scatter")
         .attr("transform", `translate(${cs_margin.left},${cs_margin.top})`);
 
 //read the data 
-d3.csv('citibike-data.csv').then(function(cs_data){
+d3.csv('data/citibike-data.csv').then(function(cs_data){
     // list of groups 
     const allGroup = ["Grand Army Plaza & Central Park S", "34 Ave & 38 St", "1 Ave & E 18 St"]
 
