@@ -10,7 +10,8 @@ const cs_svg = d3.select("#connected_scatter")
         .attr("height", cs_height + cs_margin.top + cs_margin.bottom)
 
     .append("g")
-        .attr("transform", `translate(${cs_margin.left},${cs_margin.top})`);
+    .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
 
 //read the data 
 d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
@@ -49,8 +50,8 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
 
     //add lines 
     const cs_line = d3.line()
-        .x_axis(d => x_axis(+d.count))
-        .y_axis(d => y_axis(+d.values))
+    .x(function(d) { return x(d.hour) })
+    .y(function(d) { return y(d.count) })
 
     cs_svg.selectAll("lines")
         .data(cs_data_ready)
@@ -70,8 +71,8 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
         .selectAll("points")
         .data(d => d.values)
         .join("circle")
-            .attr("cx", d=> x_axis(d.count))
-            .attr("cv", d=> y_axis(d.values))
+            .attr("cx", d=> x_axis(d.hour))
+            .attr("cv", d=> y_axis(d.count))
             .attr("r", 5)
             .attr("stroke", "white")
     //add legend 
@@ -79,11 +80,11 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
         .selectAll("labels")
         .data(cs_data_ready)
         .join("g")
-            .apped("text")
-            .datum(d => {return {name: d.name, value: d.values[d.values.length - 1]};})
+            .append("text")
+            .datum(d => {return {name: d.station, value: d.values[d.values.length - 1]};})
             .attr("transform",d => `translate(${x(d.values.count)},${y(d.values.value)})`)
             .attr("x", 12)
-            .text(d => d.name)
-            .style("fill", d=> cs_color(d.name))
+            .text(d => d.station)
+            .style("fill", d=> cs_color(d.station))
             .style("font-size", 15)
 })
