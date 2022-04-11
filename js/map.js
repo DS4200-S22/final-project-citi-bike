@@ -1,7 +1,7 @@
 // The svg
 const map_svg = d3.select("svg"),
-    map_width = +svg.attr("width"),
-    map_height = +svg.attr("height");
+    map_width = +map_svg.attr("width"),
+    map_height = +map_svg.attr("height");
 
 // Map and projection
 const projection = d3.geoMercator()
