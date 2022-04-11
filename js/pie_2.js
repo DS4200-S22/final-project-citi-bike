@@ -30,7 +30,7 @@ function update(pie_data) {
   const pie_ = d3.pie()
     .value(function(d) {return d[1]; })
     .sort(function(a, b) { return d3.ascending(a.key, b.key);} ) // This make sure that group order remains the same in the pie chart
-  const pie_data_ready = pie(Object.entries(pie_data))
+  const pie_data_ready = pie_(Object.entries(pie_data))
 
   // map to data
   const u = svg.selectAll("path")
