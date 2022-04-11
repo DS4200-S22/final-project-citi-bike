@@ -13,9 +13,9 @@ const cs_svg = d3.select("#connected_scatter")
         .attr("transform", `translate(${cs_margin.left},${cs_margin.top})`);
 
 //read the data 
-d3.csv('data/end_stations').then(function(cs_data){
+d3.csv('data/endst_avg_hour').then(function(cs_data){
     // list of groups 
-    const allGroup = ["Grand Army Plaza & Central Park S", "34 Ave & 38 St", "1 Ave & E 18 St"]
+    const allGroup = ["Grand Army Plaza & Central Park S", "34 Ave & 38 St", "1 Ave & E 18 St", "MacDougal St & Prince St", "Clinton St & Joralemon St"]
 
     //re format data 
     const cs_data_ready = allGroup.map(function(grpName){
@@ -33,7 +33,7 @@ d3.csv('data/end_stations').then(function(cs_data){
         .range(d3.schemeSet2); 
     // add x axis 
     const x_axis = d3.scaleLinear()
-        .domain([0,10])
+        .domain([0,23])
         .range([0, cs_width]);
 
     cs_svg.append("g")
@@ -55,7 +55,7 @@ d3.csv('data/end_stations').then(function(cs_data){
     cs_svg.selectAll("lines")
         .data(cs_data_ready)
         .join("path")
-            .attr("d", d=> line(d.values))
+            .attr("d", d=> cs_line(d.values))
             .attr("stroke", d=> cs_color(d.name))
             .style("stroke-width", 4)
             .style("fill", "none")
