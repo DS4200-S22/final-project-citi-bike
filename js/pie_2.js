@@ -44,6 +44,7 @@ function update(pie_data){
         .attr("stroke", "white")
         .style("stroke-wodth", "2px")
         .style("opacity", 1)
+    
 }
 
 update(data1_pie)
