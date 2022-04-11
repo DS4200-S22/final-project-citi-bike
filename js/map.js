@@ -1,5 +1,5 @@
 // The svg
-const svg_map_ny = d3.select("svg"),
+const svg_map_ny = d3.select("#map_viz"),
     map_width = +svg_map_ny.attr("width"),
     map_height = +svg_map_ny.attr("height");
 
