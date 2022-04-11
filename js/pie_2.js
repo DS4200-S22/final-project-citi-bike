@@ -29,7 +29,7 @@ function update(pie_data){
     const pie_data_ready = pie_(Object.entries(pie_data))
 
     //map to data
-    const u = svg.selectAll("path")
+    const u = pie_svg.selectAll("path")
         .data(pie_data_ready)
 
     u
