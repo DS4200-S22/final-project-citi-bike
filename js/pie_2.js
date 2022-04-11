@@ -9,7 +9,7 @@ const pie_svg = d3.select("#pie_chart")
         .attr("width", pie_width)
         .attr("height", pie_height)
     .append("g")
-    attr("transform", `translate(${pie_width/2}, ${pie_height/2})`);
+    .attr("transform", `translate(${pie_width/2}, ${pie_height/2})`);
 
 
 // create 2 data sets 
