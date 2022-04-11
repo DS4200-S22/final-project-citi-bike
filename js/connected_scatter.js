@@ -33,7 +33,7 @@ d3.csv('data/citibike-data.csv').then(function(cs_data){
     // add x axis 
     const x_axis = d3.scaleLinear()
         .domain([0,10])
-        .range([0, cs_width])
+        .range([0, cs_width]);
 
     cs_svg.append("g")
         .attr("transform", `translate(0, ${cs_height})`)
