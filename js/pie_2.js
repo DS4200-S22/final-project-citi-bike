@@ -40,7 +40,7 @@ function update(pie_data){
             .innerRadius(0)
             .outerRadius(pie_radius)
             )
-        .attr('fill', function(d){return pie_color(d.pie_data[0])})
+        .attr('fill', function(d){return(pie_color(d.pie_data[0]))})
         .attr("stroke", "white")
         .style("stroke-wodth", "2px")
         .style("opacity", 1)
