@@ -27,6 +27,7 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
             })
         };
     });
+console.log(cs_data_ready)
 
     //color scale 
     const cs_color = d3.scaleOrdinal()
