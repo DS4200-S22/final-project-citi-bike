@@ -20,7 +20,7 @@ const data2_pie = {a: 105, b: 50, c: 49, d: 47, e: 43, f: 38, g: 36, h:34, i: 24
 
 // set the color scale
 const pie_color = d3.scaleOrdinal()
-  .domain(["a", "b", "c", "d", "e", "f"])
+  .domain(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"])
   .range(d3.schemeDark2);
 
 // A function that create / update the plot for a given variable:
