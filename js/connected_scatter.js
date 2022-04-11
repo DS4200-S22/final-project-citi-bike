@@ -27,7 +27,7 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
             })
         };
     });
-console.log(cs_data_ready)
+    console.log(dataReady)
 
     //color scale 
     const cs_color = d3.scaleOrdinal()
@@ -51,14 +51,14 @@ console.log(cs_data_ready)
 
     //add lines 
     const cs_line = d3.line()
-    .x(function(d) { return x(d.hour) })
-    .y(function(d) { return y(d.count) })
+    .x(d => x(+d.hour))
+    .y(d => y(+d.count))
 
     cs_svg.selectAll("lines")
         .data(cs_data_ready)
         .join("path")
-            .attr("d", d=> cs_line(d.values))
-            .attr("stroke", d=> cs_color(d.name))
+            .attr("d", d=> cs_line(d.count))
+            .attr("stroke", d=> cs_color(d.station))
             .style("stroke-width", 4)
             .style("fill", "none")
 
@@ -67,7 +67,7 @@ console.log(cs_data_ready)
         .selectAll("dots")
         .data(cs_data_ready)
         .join("g")
-            .style("fill", d => cs_color(d.name))
+            .style("fill", d => cs_color(d.station))
         //values 
         .selectAll("points")
         .data(d => d.values)
