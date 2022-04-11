@@ -26,4 +26,3 @@ d3.json("https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geoj
           )
           .style("stroke", "none")
 })
-     
