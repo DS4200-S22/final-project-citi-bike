@@ -23,7 +23,7 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
         return {
             name: grpName, 
             values: cs_data.map(function(d){
-                return{ hour: d.hour, value: d+[grpName]};
+                return{ hour: d.hour, value: +d[grpName]};
             })
         };
     });
