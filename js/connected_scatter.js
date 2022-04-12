@@ -73,7 +73,7 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
         .data(d => d.values)
         .join("circle")
             .attr("cx", d=> x(d.hour))
-            .attr("cv", d=> y(d.value))
+            .attr("cy", d=> y(d.value))
             .attr("r", 5)
             .attr("stroke", "white")
     //add legend 
