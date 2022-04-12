@@ -7,12 +7,11 @@ const yTooltipOffset2 = 15;
 
 const color2 = d3.scaleOrdinal()
                 .domain(["Grand Plaza & Central Park S", "34 Ave & 38 St"])
-                .range(["#e98491"]);
-
+                .range(["#acf0eb"]);
 
 /*******************
  
-  Bar chart 2
+  Bar chart 1
  
  *******************/ 
 
@@ -23,7 +22,7 @@ d3.csv("data/end_stations.csv").then(function(data2) {
 
   // Add an svg to csv-bar div  
   const svg4 = d3
-    .select("#hard-coded-bar2")
+    .select("#end-stations-csv")
     .append("svg")
     .attr("width", width2-margin2.left-margin2.right)
     .attr("height", height2 - margin2.top - margin2.bottom)
@@ -58,7 +57,8 @@ d3.csv("data/end_stations.csv").then(function(data2) {
    .attr("x",0 - (height2 / 2))
    .attr("dy", "1em")
    .style("text-anchor", "middle")
-   .text("Count"); 
+   .text("Count");
+
 
   // Add x axis to webpage  
 svg4.append("g")
@@ -84,13 +84,25 @@ svg4.append("g")
                 .append("div") 
                 .attr('id', "tooltip2") 
                 .style("opacity", 0) 
-                .attr("class", "tooltip"); 
+                .attr("class", "tooltip")
+                .style("background-color", "lightgrey")
+                .style("border", "solid")
+                .style("border-width", "2px")
+                .style("border-radius", "5px")
+                .style("padding", "5px")
+; 
 
 // Add values to tooltip on mouseover, make tooltip div opaque  
  const mouseover5 = function(event, d) {
   tooltip4.html("Station Name: " + d.station_name + "<br> Total Rides Ended Here: " + d.count + "<br>") 
-          .style("opacity", 1);  
+          .style("opacity", 1)
+  d3.select(this)
+    .style("border-width", "20px")
+    .style("stroke", "black")
+    .style("opacity", 2)
+  ;   
 }
+
 
 // Position tooltip to follow mouse 
 const mousemove5 = function(event, d) {
@@ -100,7 +112,12 @@ const mousemove5 = function(event, d) {
 
 // Return tooltip to transparant when mouse leaves
 const mouseleave5 = function(event, d) { 
-  tooltip4.style("opacity", 0); 
+  tooltip4.style("opacity", 0)
+  d3.select(this)
+    .style("border-width", "20px")
+    .style("stroke", "none")
+    .style("opacity", 2)
+  ; 
 
 }
 
