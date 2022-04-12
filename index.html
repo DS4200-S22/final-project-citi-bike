@@ -62,8 +62,12 @@
    <button onclick="update(data2_pie)">End Station</button>
 <h2>Connected Scatter (End Stations) </h2>
 <div id="connected_scatter" class="vis-holder"></div>
-
-  
+<h2>Histogram: Mintues taken Per Citi Bike Ride</h2>
+<div id = "csv-histogram" class = "vis-holder" ></div>
+<p>
+  <label>Number of bins:</label>
+  <input type="number" min="1" max="100" step="5" value="15" id="nBin">
+</p>
 <!-- More writeup -->
 <div class = 'content-column'>
 
@@ -120,5 +124,7 @@
   <script src='js/pie_2.js'></script>
   <script src='js/connected_scatter.js'></script>
   <script src='js/map.js'></script>
+  <script src='js/histogram.js'></script>
+
 </body>
 </html>
