@@ -23,7 +23,7 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
         return {
             name: grpName, 
             values: cs_data.map(function(d){
-                return{ count: d.count, value: d+[grpName]};
+                return{ hour: d.hour, value: d+[grpName]};
             })
         };
     });
@@ -52,7 +52,7 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
     //add lines 
     const cs_line = d3.line()
     .x(d => x(+d.hour))
-    .y(d => y(+d.count))
+    .y(d => y(+d.value))
 
     cs_svg.selectAll("lines")
         .data(cs_data_ready)
@@ -73,7 +73,7 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
         .data(d => d.values)
         .join("circle")
             .attr("cx", d=> x_axis(d.hour))
-            .attr("cv", d=> y_axis(d.count))
+            .attr("cv", d=> y_axis(d.value))
             .attr("r", 5)
             .attr("stroke", "white")
     //add legend 
@@ -83,7 +83,7 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
         .join("g")
             .append("text")
             .datum(d => {return {name: d.name, value: d.values[d.values.length - 1]};})
-            .attr("transform",d => `translate(${x(d.values.count)},${y(d.values.value)})`)
+            .attr("transform",d => `translate(${x(d.values.hour)},${y(d.values.value)})`)
             .attr("x", 12)
             .text(d => d.name)
             .style("fill", d=> cs_color(d.name))
