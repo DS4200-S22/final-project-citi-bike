@@ -1,13 +1,13 @@
-
-const cs_margin = {top: 10, right: 100, bottom: 30, left: 30}, 
-    cs_width = 460 - cs_margin.left - cs_margin.right, 
-    cs_height = 400 - cs_margin.top - cs_margin.bottom; 
+const cs_margin = {left:50, right:50, bottom:185, top:50}, 
+    cs_width = 1500,
+    cs_height = 850; 
 
 //append svg  
 const cs_svg = d3.select("#connected_scatter")
     .append("svg")
-        .attr("width", cs_width + cs_margin.left + cs_margin.right)
-        .attr("height", cs_height + cs_margin.top + cs_margin.bottom)
+    .attr("width", cs_width-cs_margin.left-cs_margin.right)
+    .attr("height", cs_height - cs_margin.top - cs_margin.bottom)
+    .attr("viewBox", [0, 0, cs_width, cs_height])
 
     .append("g")
     .attr("transform",
