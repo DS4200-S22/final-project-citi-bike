@@ -1,6 +1,6 @@
 const cs_margin = {left:50, right:50, bottom:185, top:50}, 
     cs_width = 1500,
-    cs_height = 850; 
+    cs_height = 1050; 
 
 //append svg  
 const cs_svg = d3.select("#connected_scatter")
