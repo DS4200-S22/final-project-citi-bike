@@ -5,8 +5,8 @@ const cs_margin = {left:50, right:50, bottom:185, top:50},
 //append svg  
 const cs_svg = d3.select("#connected_scatter")
     .append("svg")
-    .attr("width", cs_width-cs_margin.left-cs_margin.right)
-    .attr("height", cs_height - cs_margin.top - cs_margin.bottom)
+    .attr("width", cs_width)
+    .attr("height", cs_height)
     .attr("viewBox", [0, 0, cs_width, cs_height])
 
     .append("g")
