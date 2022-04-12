@@ -3,7 +3,7 @@ const cs_margin = {top: 10, right: 100, bottom: 30, left: 30},
     cs_width = 460 - cs_margin.left - cs_margin.right, 
     cs_height = 400 - cs_margin.top - cs_margin.bottom; 
 
-//append svg shit 
+//append svg  
 const cs_svg = d3.select("#connected_scatter")
     .append("svg")
         .attr("width", cs_width + cs_margin.left + cs_margin.right)
@@ -34,7 +34,7 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
         .domain(allGroup)
         .range(d3.schemeSet2); 
     // add x axis 
-    const x_axis = d3.scaleLinear()
+    const x = d3.scaleLinear()
         .domain([0,23])
         .range([0, cs_width]);
 
@@ -43,7 +43,7 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
         .call(d3.axisBottom(x_axis)); 
 
     //add y axis 
-    const y_axis = d3.scaleLinear()
+    const y = d3.scaleLinear()
         .domain([0, 20])
         .range([cs_height, 0]); 
     cs_svg.append("g")
@@ -51,8 +51,8 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
 
     //add lines 
     const cs_line = d3.line()
-    .x_axis(d => x_axis(+d.hour))
-    .y_axis(d => y_axis(+d.value))
+    .x(d => x(+d.hour))
+    .y(d => y(+d.value))
 
     cs_svg.selectAll("lines")
         .data(cs_data_ready)
@@ -72,8 +72,8 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
         .selectAll("points")
         .data(d => d.values)
         .join("circle")
-            .attr("cx", d=> x_axis(d.hour))
-            .attr("cv", d=> y_axis(d.value))
+            .attr("cx", d=> x(d.hour))
+            .attr("cv", d=> y(d.value))
             .attr("r", 5)
             .attr("stroke", "white")
     //add legend 
