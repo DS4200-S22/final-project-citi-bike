@@ -40,14 +40,14 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
 
     cs_svg.append("g")
         .attr("transform", `translate(0, ${cs_height})`)
-        .call(d3.axisBottom(x_axis)); 
+        .call(d3.axisBottom(x)); 
 
     //add y axis 
     const y = d3.scaleLinear()
         .domain([0, 20])
         .range([cs_height, 0]); 
     cs_svg.append("g")
-        .call(d3.axisLeft(y_axis)); 
+        .call(d3.axisLeft(y)); 
 
     //add lines 
     const cs_line = d3.line()
