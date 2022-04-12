@@ -79,7 +79,7 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
     //add legend 
     cs_svg
     .selectAll("myLabels")
-    .data(dataReady)
+    .data(cs_data_ready)
     .join('g')
       .append("text")
         .datum(d => { return {name: d.name, value: d.values[d.values.length - 1]}; }) // keep only the last value of each time series
