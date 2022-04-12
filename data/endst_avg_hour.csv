@@ -1,121 +1,25 @@
-station,hour,count
-1 Ave & E 18 St,1,1
-1 Ave & E 18 St,2,1
-1 Ave & E 18 St,3,0
-1 Ave & E 18 St,4,0
-1 Ave & E 18 St,5,0
-1 Ave & E 18 St,6,0
-1 Ave & E 18 St,7,0
-1 Ave & E 18 St,8,1
-1 Ave & E 18 St,9,3
-1 Ave & E 18 St,10,1
-1 Ave & E 18 St,11,3
-1 Ave & E 18 St,12,4
-1 Ave & E 18 St,13,3
-1 Ave & E 18 St,14,0
-1 Ave & E 18 St,15,2
-1 Ave & E 18 St,16,4
-1 Ave & E 18 St,17,3
-1 Ave & E 18 St,18,7
-1 Ave & E 18 St,19,4
-1 Ave & E 18 St,20,1
-1 Ave & E 18 St,21,1
-1 Ave & E 18 St,22,1
-1 Ave & E 18 St,23,6
-1 Ave & E 18 St,0,0
-34 Ave & 38 St,1,0
-34 Ave & 38 St,2,0
-34 Ave & 38 St,3,0
-34 Ave & 38 St,4,0
-34 Ave & 38 St,5,2
-34 Ave & 38 St,6,0
-34 Ave & 38 St,7,16
-34 Ave & 38 St,8,17
-34 Ave & 38 St,9,0
-34 Ave & 38 St,10,0
-34 Ave & 38 St,11,0
-34 Ave & 38 St,12,2
-34 Ave & 38 St,13,2
-34 Ave & 38 St,14,1
-34 Ave & 38 St,15,3
-34 Ave & 38 St,16,2
-34 Ave & 38 St,17,1
-34 Ave & 38 St,18,4
-34 Ave & 38 St,19,0
-34 Ave & 38 St,20,0
-34 Ave & 38 St,21,0
-34 Ave & 38 St,22,0
-34 Ave & 38 St,23,0
-34 Ave & 38 St,0,0
-Grand Army Plaza & Central Park S,1,0
-Grand Army Plaza & Central Park S,2,0
-Grand Army Plaza & Central Park S,3,0
-Grand Army Plaza & Central Park S,4,0
-Grand Army Plaza & Central Park S,5,0
-Grand Army Plaza & Central Park S,6,1
-Grand Army Plaza & Central Park S,7,6
-Grand Army Plaza & Central Park S,8,5
-Grand Army Plaza & Central Park S,9,7
-Grand Army Plaza & Central Park S,10,4
-Grand Army Plaza & Central Park S,11,5
-Grand Army Plaza & Central Park S,12,7
-Grand Army Plaza & Central Park S,13,6
-Grand Army Plaza & Central Park S,14,7
-Grand Army Plaza & Central Park S,15,14
-Grand Army Plaza & Central Park S,16,8
-Grand Army Plaza & Central Park S,17,13
-Grand Army Plaza & Central Park S,18,12
-Grand Army Plaza & Central Park S,19,2
-Grand Army Plaza & Central Park S,20,4
-Grand Army Plaza & Central Park S,21,2
-Grand Army Plaza & Central Park S,22,1
-Grand Army Plaza & Central Park S,23,1
-Grand Army Plaza & Central Park S,0,0
-MacDougal St & Prince St,1,1
-MacDougal St & Prince St,2,1
-MacDougal St & Prince St,3,1
-MacDougal St & Prince St,4,0
-MacDougal St & Prince St,5,0
-MacDougal St & Prince St,6,0
-MacDougal St & Prince St,7,0
-MacDougal St & Prince St,8,1
-MacDougal St & Prince St,9,1
-MacDougal St & Prince St,10,1
-MacDougal St & Prince St,11,4
-MacDougal St & Prince St,12,4
-MacDougal St & Prince St,13,1
-MacDougal St & Prince St,14,4
-MacDougal St & Prince St,15,3
-MacDougal St & Prince St,16,4
-MacDougal St & Prince St,17,3
-MacDougal St & Prince St,18,3
-MacDougal St & Prince St,19,1
-MacDougal St & Prince St,20,4
-MacDougal St & Prince St,21,2
-MacDougal St & Prince St,22,2
-MacDougal St & Prince St,23,2
-MacDougal St & Prince St,0,0
-Clinton St & Joralemon St,1,2
-Clinton St & Joralemon St,2,0
-Clinton St & Joralemon St,3,0
-Clinton St & Joralemon St,4,0
-Clinton St & Joralemon St,5,0
-Clinton St & Joralemon St,6,4
-Clinton St & Joralemon St,7,2
-Clinton St & Joralemon St,8,1
-Clinton St & Joralemon St,9,4
-Clinton St & Joralemon St,10,2
-Clinton St & Joralemon St,11,1
-Clinton St & Joralemon St,12,1
-Clinton St & Joralemon St,13,3
-Clinton St & Joralemon St,14,7
-Clinton St & Joralemon St,15,1
-Clinton St & Joralemon St,16,2
-Clinton St & Joralemon St,17,7
-Clinton St & Joralemon St,18,4
-Clinton St & Joralemon St,19,0
-Clinton St & Joralemon St,20,1
-Clinton St & Joralemon St,21,2
-Clinton St & Joralemon St,22,2
-Clinton St & Joralemon St,23,1
-Clinton St & Joralemon St,0,0
+Hour,1 Ave & E 18 St,34 Ave & 38 St,Grand Army Plaza & Central Park S,MacDougal St & Prince St,Clinton St & Joralemon St
+1,1,0,0,1,2
+2,1,0,0,1,0
+3,0,0,0,1,0
+4,0,0,0,0,0
+5,0,2,0,0,0
+6,0,0,1,0,4
+7,0,16,6,0,2
+8,1,17,5,1,1
+9,3,0,7,1,4
+10,1,0,4,1,2
+11,3,0,5,4,1
+12,4,2,7,4,1
+13,3,2,6,1,3
+14,0,1,7,4,7
+15,2,3,14,3,1
+16,4,2,8,4,2
+17,3,1,13,3,7
+18,7,4,12,3,4
+19,4,0,,1,0
+20,1,0,4,4,1
+21,1,0,2,2,2
+22,1,0,1,2,2
+23,6,0,1,2,1
+0,0,0,0,0,0
