@@ -77,15 +77,15 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
             .attr("r", 5)
             .attr("stroke", "white")
     //add legend 
-    cs_svg 
-        .selectAll("labels")
-        .data(cs_data_ready)
-        .join("g")
-            .append("text")
-            .datum(d => {return {name: d.name, value: d.values[d.values.length - 1]};})
-            .attr("transform",d => `translate(${x(d.values.hour)},${y(d.values.value)})`)
-            .attr("x", 12)
-            .text(d => d.name)
-            .style("fill", d=> cs_color(d.name))
-            .style("font-size", 15)
+    cs_svg
+    .selectAll("myLabels")
+    .data(dataReady)
+    .join('g')
+      .append("text")
+        .datum(d => { return {name: d.name, value: d.values[d.values.length - 1]}; }) // keep only the last value of each time series
+        .attr("transform",d => `translate(${x(d.value.hour)},${y(d.value.value)})`) // Put the text at the position of the last point
+        .attr("x", 12) // shift the text a bit more right
+        .text(d => d.name)
+        .style("fill", d => cs_color(d.name))
+        .style("font-size", 15)
 })
