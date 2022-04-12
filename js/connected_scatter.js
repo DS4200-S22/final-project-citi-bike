@@ -51,8 +51,8 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
 
     //add lines 
     const cs_line = d3.line()
-    .x(d => x(+d.hour))
-    .y(d => y(+d.value))
+    .x_axis(d => x_axis(+d.hour))
+    .y_axis(d => y_axis(+d.value))
 
     cs_svg.selectAll("lines")
         .data(cs_data_ready)
