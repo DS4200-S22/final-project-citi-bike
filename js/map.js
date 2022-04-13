@@ -1,9 +1,9 @@
-const map_svg = d3.select("svg")
+let map_svg = d3.select("svg")
     map_width = +map_svg.attr("width")
     map_height = +map_svg.attr("height")
 
 //map and projection 
-const map_projection = d3.geoMercator()
+let map_projection = d3.geoMercator()
     .center([2, 47])
     .scale(980)
     .translate([map_width/2, map_height/2])
