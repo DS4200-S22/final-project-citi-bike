@@ -50,8 +50,10 @@
 
 <h2>Rider Types</h2>
 <div id="hard-coded-bar" class="vis-holder"></div>
+  
 <h2>Popular End Stations</h2>
 <div id="end-stations-csv" class="vis-holder"></div>
+  
 <h2>Map</h2>
   <div id="map" style="height: 95vh;"></div>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -61,10 +63,7 @@ crossorigin="" />
 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 crossorigin=""></script>  
   <link href="./leaflet_demo.css" type="text/css" rel="stylesheet" />
-<h2>Pie Chart</h2>
-<div id="pie_viz" class="vis-holder"></div>
-   <button onclick="update(p_data_1)"> Start Station</button>
-   <button onclick="update(p_data_2)">End Station</button>
+
 <h2>Connected Scatter (End Stations) </h2>
 <div id="connected_scatter" class="vis-holder"></div>
 <h2>Histogram: Mintues taken Per Citi Bike Ride</h2>
@@ -124,7 +123,6 @@ crossorigin=""></script>
   <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
   <script src='js/barchart.js'></script>
   <script src='js/barchart2.js'></script>
-  <script src='js/pie_2.js'></script>
   <script src='js/connected_scatter.js'></script>
   <script src='js/histogram.js'></script>
   <script src='js/new_map.js'></script>
