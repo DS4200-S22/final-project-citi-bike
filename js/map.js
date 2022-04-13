@@ -1,6 +1,10 @@
+const map_width = 460
+const map_height = 400
+
 const map_svg_1 = d3.select("svg")
-    map_width = +map_svg_1.attr("width")
-    map_height = +map_svg_1.attr("height")
+    .append("svg")
+    .attr("width", map_width)
+    .attr("height", map_height)
 
 //map and projection 
 const map_projection = d3.geoMercator()
