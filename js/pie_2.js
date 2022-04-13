@@ -1,7 +1,7 @@
 //set dimensions 
 const pie_width = 450, 
     pie_height = 450, 
-    pie_margin = 40, 
+    pie_margin = 40; 
 
 //radius 
 const pie_radius = Math.min(pie_width, pie_height) / 2 - pie_margin; 
