@@ -1,29 +1,27 @@
-// The svg
-const svg_map_ny = d3.select("#map_viz"),
-    map_width = +svg_map_ny.attr("width"),
-    map_height = +svg_map_ny.attr("height");
+const map_svg = d3.select("svg")
+    map_width = +map_svg.attr("width")
+    map_height = +map_svg.attr("height")
 
-// Map and projection
-const projection = d3.geoMercator()
-    .center([2, 47])                // GPS of location to zoom on
-    .scale(980)                       // This is like the zoom
-    .translate([ map_width/2, map_height/2 ])
+//map and projection 
+const map_projection = d3.geoMercator()
+    .center([2, 47])
+    .scale(980)
+    .translate([map_width/2, map_height/2])
 
-// Load external data and boot
-d3.json("https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geojson").then( function(map_data){
-
-    // Filter data
+//load external data 
+d3.json("https://raw.githubusercontent.com/dwillis/nyc-maps/master/boroughs.geojson").then(function(map_data){
+    //filter data 
     map_data.features = map_data.features.filter(d => {console.log(d.properties.name); return d.properties.name=="Manhattan"})
 
-    // Draw the map
-    svg_map_ny.append("g")
+    //draw the map 
+    map_svg.append("g")
         .selectAll("path")
         .data(map_data.features)
         .join("path")
-          .attr("fill", "grey")
-          .attr("d", d3.geoPath()
-              .projection(projection)
-          )
-          .style("stroke", "none")
+            .attr("fill", "grey")
+            .attr("d", d3.geoPath()
+                .projection(map_projection)
+                
+                )
+            .style("stroke", "none")
 })
-     
