@@ -1,7 +1,7 @@
 const cs_margin = {left:50, right:50, bottom:185, top:50}, 
     cs_width = 1500,
     cs_height = 1050; 
-
+const yTooltipOffset_cs = 15;
 //append svg  
 const cs_svg = d3.select("#connected_scatter")
     .append("svg")
@@ -54,6 +54,31 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
     .x(d => x(+d.hour))
     .y(d => y(+d.value))
 
+
+const tooltip_cs = d3.select("body") 
+.append("div") 
+.attr('id', "tooltip2") 
+.style("opacity", 0) 
+.attr("class", "tooltip"); 
+
+// Add values to tooltip on mouseover, make tooltip div opaque  
+const mouseover_cs = function(event, d) {
+tooltip_cs.html("Station Name: " + d.name + "<br> Rides Ended Here: " + d.value + "At Hour:" + d.hour + "<br>") 
+.style("opacity", 1);  
+}
+
+// Position tooltip to follow mouse 
+const mousemove_cs = function(event, d) {
+tooltip_cs.style("left", (event.pageX)+"px") 
+.style("top", (event.pageY + yTooltipOffset_cs)+"px"); 
+}
+
+// Return tooltip to transparant when mouse leaves
+const mouseleave_cs = function(event, d) { 
+tooltip_cs.style("opacity", 0); 
+
+}
+
     cs_svg.selectAll("lines")
         .data(cs_data_ready)
         .join("path")
@@ -76,6 +101,10 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
             .attr("cy", d=> y(d.value))
             .attr("r", 5)
             .attr("stroke", "white")
+            .on("mouseover", mouseover_cs) 
+            .on("mousemove", mousemove_cs)
+            .on("mouseleave", mouseleave_cs);
+     
 
 
 
@@ -125,4 +154,5 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
         .attr("dy", "1em")
         .style("text-anchor", "middle")
         .text("Count");
+
 })
