@@ -31,13 +31,13 @@ ss_marker_9.bindPopup("<b> 6 Ave & Broome St, Starting Rides: 16, 'Riders: 13 Me
 ss_marker_10.bindPopup("<b> Delancey St & Eldridge St, Starting Rides: 14, Riders: 2 Members, 12 Casual</b>"); 
 
 //markers for end stations
-let es_marker_1 = L.marker([40.75500254, -73.98014437], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_2 = L.marker([40.754164, -73.908906], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_3 = L.marker([40.72621788, -73.98379855], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_4 = L.marker([40.68539567, -73.97431458], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_5 = L.marker([40.742753828659026, -74.00747358798981], {markerColor: 'red'}).addTo(my_map);
-let es_marker_6 = L.marker([40.7505853470315, -73.9946848154068], {markerColor: 'red'}).addTo(my_map);
-let es_marker_7 = L.marker([40.7462009, -73.988557235], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_8 = L.marker([40.72621788, -73.98379855], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_9 = L.marker([40.68539567, -73.97431458], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_10 = L.marker([40.70112, -73.93039], {markerCikir: 'red'}).addTo(my_map); 
+let es_marker_1 = L.marker([40.75500254, -73.98014437]).addTo(my_map); 
+let es_marker_2 = L.marker([40.754164, -73.908906]).addTo(my_map); 
+let es_marker_3 = L.marker([40.72621788, -73.98379855]).addTo(my_map); 
+let es_marker_4 = L.marker([40.68539567, -73.97431458]).addTo(my_map); 
+let es_marker_5 = L.marker([40.742753828659026, -74.00747358798981]).addTo(my_map);
+let es_marker_6 = L.marker([40.7505853470315, -73.9946848154068]).addTo(my_map);
+let es_marker_7 = L.marker([40.7462009, -73.988557235]).addTo(my_map); 
+let es_marker_8 = L.marker([40.72621788, -73.98379855]).addTo(my_map); 
+let es_marker_9 = L.marker([40.68539567, -73.97431458]).addTo(my_map); 
+let es_marker_10 = L.marker([40.70112, -73.93039]).addTo(my_map); 
