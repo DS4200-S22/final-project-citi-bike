@@ -43,6 +43,18 @@ let es_marker_8 = L.marker([40.72621788, -73.98379855], {markerColor: 'red'}).ad
 let es_marker_9 = L.marker([40.68539567, -73.97431458], {markerColor: 'red'}).addTo(my_map); 
 let es_marker_10 = L.marker([40.70112, -73.93039], {markerColor: 'red'}).addTo(my_map); 
 
+es_marker_1.bindPopup("<b> Grand Army Plaza and Central Park South', 'Ending Rides: 105', 'Riders: 63 Casual</b>");
+es_marker_2.bindPopup("<b> 34 Ave & 38 St','Ending Rides: 50', 'Riders: 31 Members, 19 Casual</b>");
+es_marker_3.bindPopup("<b> 1 Ave & E 18 St','Ending Rides: 50', 'Riders: 34 Members, 15 Casual</b>");
+es_marker_4.bindPopup("<b> Clinton St & Joralemon St','Ending Rides: 47', 'Riders: 30 Members, 17 Casual </b>");
+es_marker_5.bindPopup("<b> MacDougal St & Prince St','Ending Rides: 43', 'Riders: 28 Members, 15 Casual </b>");
+es_marker_6.bindPopup("<b> W 16 St & The High Line','Ending Rides: 38', 'Riders: 24 Members, 14 Casual </b> "); 
+es_marker_7.bindPopup("<b> W 47 & 6 Ave','Ending Rides: 36', 'Riders: 16 Members, 20 Casual </b>" ); 
+es_marker_8.bindPopup("<b> E 11 & Avenue B','Ending Rides: 34', 'Riders: 25 Members, 9 Casual </b>");
+es_marker_9.bindPopup("<b> Baltic St & 5 Ave','Ending Rides: 24', 'Riders: 12 Members, 0 Casual </b>"); 
+es_marker_10.bindPopup("<b> Prospect Pl & 6 Ave','Ending Rides: 19', 'Riders: 10 Members, 0 Casual </b>"); 
+
+
 
 
 
