@@ -18,6 +18,7 @@ let ss_marker_8 = L.marker([40.795, -73.9645]).addTo(my_map);
 let ss_marker_9 = L.marker([40.72431, -74.00473]).addTo(my_map); 
 let ss_marker_10 = L.marker([40.719383, -73.991479]).addTo(my_map); 
 
+
 ss_marker_1.bindPopup("<b> E 7 & Avenue A, Starting Rides: 53, Riders: 45 Member, 8 Casual</b>");
 ss_marker_2.bindPopup("<b> 5 Ave & E 72 St', 'Starting Rides: 50', 'Riders: 3 Members, 47 Casual</b>");
 ss_marker_3.bindPopup("<b> 34 Ave & 31 St', 'Starting Rides: 25', 'Riders: 13 Members, 12 Casual</b>");
