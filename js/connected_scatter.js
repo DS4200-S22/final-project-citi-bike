@@ -27,7 +27,6 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
             })
         };
     });
-    console.log(cs_data_ready)
 
     //color scale 
     const cs_color = d3.scaleOrdinal()
@@ -56,8 +55,6 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
 
 
 const tooltip_cs = d3.select("body") 
-.data(cs_data_ready)
-.enter()
 .append("div") 
 .attr('id', "tooltip2") 
 .style("opacity", 0) 
@@ -65,7 +62,7 @@ const tooltip_cs = d3.select("body")
 
 // Add values to tooltip on mouseover, make tooltip div opaque  
 const mouseover_cs = function(event, d) {
-tooltip_cs.html("Station Name: " + d.name + "<br> Rides Ended Here: " + d.value + " At Hour: " + d.hour + "<br>") 
+tooltip_cs.html("Rides Ended Here: " + d.value + "<br> At Hour: " + d.hour + "<br>") 
 .style("opacity", 1);  
 }
 
