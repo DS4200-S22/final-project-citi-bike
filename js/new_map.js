@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 //markers for start stations
 let ss_marker_1 = L.marker([40.72621788, -73.98379855]).addTo(my_map); 
 let ss_marker_2 = L.marker([40.772828, -73.966853]).addTo(my_map); 
-let ss_marker_3 = L.marker([[40.759604471387945, -73.92714411020279]]).addTo(my_map); 
+let ss_marker_3 = L.marker([40.759604471387945, -73.92714411020279]).addTo(my_map); 
 let ss_marker_4 = L.marker([40.68962188790333, -73.98304268717766]).addTo(my_map); 
 let ss_marker_5 = L.marker([40.7867947, -73.977112]).addTo(my_map);
 let ss_marker_6 = L.marker([40.71605866, -73.99190759]).addTo(my_map);
