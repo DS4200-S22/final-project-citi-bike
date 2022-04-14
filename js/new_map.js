@@ -20,12 +20,12 @@ let ss_marker_10 = L.marker([40.719383, -73.991479]).addTo(my_map);
 
 
 ss_marker_1.bindPopup("<b> E 7 & Avenue A, Starting Rides: 53, Riders: 45 Member, 8 Casual</b>");
-ss_marker_2.bindPopup("<b> 5 Ave & E 72 St', 'Starting Rides: 50', 'Riders: 3 Members, 47 Casual</b>");
-ss_marker_3.bindPopup("<b> 34 Ave & 31 St', 'Starting Rides: 25', 'Riders: 13 Members, 12 Casual</b>");
-ss_marker_4.bindPopup("<b> Bond St & Fulton St', 'Starting Rides: 23', 'Riders: 17 Members, 6 Casual </b>");
-ss_marker_5.bindPopup("<b> W 84 St & Broadway', 'Starting Rides: 21', 'Riders: 20 Members, 1 Casual </b>");
-ss_marker_6.bindPopup("<b> Allen St & Hester St', 'Starting Rides: 17', 'Riders: 9 Members, 8 Casual</b> "); 
-ss_marker_7.bindPopup("<b> Kane St & Clinton St', 'Starting Rides: 16', 'Riders: 7 Members, 9 Casual </b>" ); 
-ss_marker_8.bindPopup("<b> W 100 St & Manhattan Ave', 'Starting Rides: 16', 'Riders: 13 Members, 3 Casual </b>");
-ss_marker_9.bindPopup("<b> 6 Ave & Broome St', 'Starting Rides: 16', 'Riders: 13 Members, 3 Casual </b>"); 
-ss_marker_10.bindPopup("<b> Delancey St & Eldridge St', 'Starting Rides: 14', 'Riders: 2 Members, 12 Casual</b>"); 
+ss_marker_2.bindPopup("<b> 5 Ave & E 72 St, Starting Rides: 50, Riders: 3 Members, 47 Casual</b>");
+ss_marker_3.bindPopup("<b> 34 Ave & 31 St, Starting Rides: 25, Riders: 13 Members, 12 Casual</b>");
+ss_marker_4.bindPopup("<b> Bond St & Fulton St, Starting Rides: 23, Riders: 17 Members, 6 Casual </b>");
+ss_marker_5.bindPopup("<b> W 84 St & Broadway, Starting Rides: 21, Riders: 20 Members, 1 Casual </b>");
+ss_marker_6.bindPopup("<b> Allen St & Hester St, Starting Rides: 17, Riders: 9 Members, 8 Casual</b> "); 
+ss_marker_7.bindPopup("<b> Kane St & Clinton St, Starting Rides: 16, Riders: 7 Members, 9 Casual </b>" ); 
+ss_marker_8.bindPopup("<b> W 100 St & Manhattan Ave, 'Starting Rides: 16, Riders: 13 Members, 3 Casual </b>");
+ss_marker_9.bindPopup("<b> 6 Ave & Broome St, Starting Rides: 16, 'Riders: 13 Members, 3 Casual </b>"); 
+ss_marker_10.bindPopup("<b> Delancey St & Eldridge St, Starting Rides: 14, Riders: 2 Members, 12 Casual</b>"); 
