@@ -31,7 +31,7 @@ ss_marker_9.bindPopup("<b> 6 Ave & Broome St, Starting Rides: 16, 'Riders: 13 Me
 ss_marker_10.bindPopup("<b> Delancey St & Eldridge St, Starting Rides: 14, Riders: 2 Members, 12 Casual</b>"); 
 
 //markers for end stations
-/*
+
 let es_marker_1 = L.marker([40.75500254, -73.98014437], {markerColor: 'red'}).addTo(my_map); 
 let es_marker_2 = L.marker([40.754164, -73.908906], {markerColor: 'red'}).addTo(my_map); 
 let es_marker_3 = L.marker([40.72621788, -73.98379855], {markerColor: 'red'}).addTo(my_map); 
@@ -42,13 +42,7 @@ let es_marker_7 = L.marker([40.7462009, -73.988557235], {markerColor: 'red'}).ad
 let es_marker_8 = L.marker([40.72621788, -73.98379855], {markerColor: 'red'}).addTo(my_map); 
 let es_marker_9 = L.marker([40.68539567, -73.97431458], {markerColor: 'red'}).addTo(my_map); 
 let es_marker_10 = L.marker([40.70112, -73.93039], {markerColor: 'red'}).addTo(my_map); 
-*/
 
-//Add Marker with leaf Icon
-//Add Marker with leaf Icon
-let leafIcon = helper.getIcon(
-    {icon: 'leaf',
-    markerColor: 'red'}
-    );
-    L.marker(["40.75500254, -73.98014437"], {icon: leafIcon}).addTo(my_map)
-    .bindPopup('The Location');
+
+
+
