@@ -56,6 +56,8 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
 
 
 const tooltip_cs = d3.select("body") 
+.data(cs_data_ready)
+.enter()
 .append("div") 
 .attr('id', "tooltip2") 
 .style("opacity", 0) 
