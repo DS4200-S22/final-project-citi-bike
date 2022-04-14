@@ -6,6 +6,18 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 20
 }).addTo(my_map);
 
+let my_icon = L.icon({
+    icon_url: 'my-icon.png', 
+    icon_size: [38,95], 
+    icon_anchor: [22, 94], 
+    popup_anchor: [-3, -76], 
+    shadow_url: 'my-icon-shadow.png', 
+    shadow_size: [68,95], 
+    shadow_anchor: [22,94]
+});
+
+L.marker([475500254, -73.98014437], {icon: my_icon}).addTo(my_map); 
+
 //markers for start stations
 let ss_marker_1 = L.marker([40.72621788, -73.98379855]).addTo(my_map); 
 let ss_marker_2 = L.marker([40.772828, -73.966853]).addTo(my_map); 
@@ -32,16 +44,16 @@ ss_marker_10.bindPopup("<b> Delancey St & Eldridge St, Starting Rides: 14, Rider
 
 //markers for end stations
 
-let es_marker_1 = L.marker([40.75500254, -73.98014437], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_2 = L.marker([40.754164, -73.908906], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_3 = L.marker([40.72621788, -73.98379855], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_4 = L.marker([40.68539567, -73.97431458], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_5 = L.marker([40.742753828659026, -74.00747358798981], {markerColor: 'red'}).addTo(my_map);
-let es_marker_6 = L.marker([40.7505853470315, -73.9946848154068], {markerColor: 'red'}).addTo(my_map);
-let es_marker_7 = L.marker([40.7462009, -73.988557235], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_8 = L.marker([40.72621788, -73.98379855], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_9 = L.marker([40.68539567, -73.97431458], {markerColor: 'red'}).addTo(my_map); 
-let es_marker_10 = L.marker([40.70112, -73.93039], {markerColor: 'red'}).addTo(my_map); 
+let es_marker_1 = L.marker([40.75500254, -73.98014437]).addTo(my_map); 
+let es_marker_2 = L.marker([40.754164, -73.908906]).addTo(my_map); 
+let es_marker_3 = L.marker([40.72621788, -73.98379855]).addTo(my_map); 
+let es_marker_4 = L.marker([40.68539567, -73.97431458]).addTo(my_map); 
+let es_marker_5 = L.marker([40.742753828659026, -74.00747358798981]).addTo(my_map);
+let es_marker_6 = L.marker([40.7505853470315, -73.9946848154068]).addTo(my_map);
+let es_marker_7 = L.marker([40.7462009, -73.988557235]).addTo(my_map); 
+let es_marker_8 = L.marker([40.72621788, -73.98379855]).addTo(my_map); 
+let es_marker_9 = L.marker([40.68539567, -73.97431458]).addTo(my_map); 
+let es_marker_10 = L.marker([40.70112, -73.93039]).addTo(my_map); 
 
 es_marker_1.bindPopup("<b> Grand Army Plaza and Central Park South', 'Ending Rides: 105', 'Riders: 63 Casual</b>");
 es_marker_2.bindPopup("<b> 34 Ave & 38 St','Ending Rides: 50', 'Riders: 31 Members, 19 Casual</b>");
@@ -53,7 +65,6 @@ es_marker_7.bindPopup("<b> W 47 & 6 Ave','Ending Rides: 36', 'Riders: 16 Members
 es_marker_8.bindPopup("<b> E 11 & Avenue B','Ending Rides: 34', 'Riders: 25 Members, 9 Casual </b>");
 es_marker_9.bindPopup("<b> Baltic St & 5 Ave','Ending Rides: 24', 'Riders: 12 Members, 0 Casual </b>"); 
 es_marker_10.bindPopup("<b> Prospect Pl & 6 Ave','Ending Rides: 19', 'Riders: 10 Members, 0 Casual </b>"); 
-
 
 
 
