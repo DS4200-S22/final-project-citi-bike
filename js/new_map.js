@@ -7,7 +7,6 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 }).addTo(my_map);
 
 
-L.marker([475500254, -73.98014437], {icon: my_icon}).addTo(my_map); 
 
 //markers for start stations
 let ss_marker_1 = L.marker([40.72621788, -73.98379855]).addTo(my_map); 
