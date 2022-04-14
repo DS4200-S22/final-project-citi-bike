@@ -11,7 +11,7 @@ const cs_svg = d3.select("#connected_scatter")
 
     .append("g")
     .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
+        "translate(" + cs_margin .left + "," + cs_margin .top + ")");
 
 //read the data 
 d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
@@ -76,16 +76,53 @@ d3.csv('data/endst_avg_hour.csv').then(function(cs_data){
             .attr("cy", d=> y(d.value))
             .attr("r", 5)
             .attr("stroke", "white")
-    //add legend 
-    cs_svg
-    .selectAll("myLabels")
-    .data(cs_data_ready)
-    .join('g')
-      .append("text")
-        .datum(d => { return {name: d.name, value: d.values[d.values.length - 1]}; }) // keep only the last value of each time series
-        .attr("transform",d => `translate(${x(d.value.hour)},${y(d.value.value)})`) // Put the text at the position of the last point
-        .attr("x", 12) // shift the text a bit more right
-        .text(d => d.name)
+
+
+
+    //Initialize legend
+    // https://medium.com/code-kings/adding-legend-to-d3-chart-b06f2ae8667 <-- This article was used as the starting point for our code to create the legend
+    let legendScatter = d3.select("#connected_scatter")
+        .append("svg")
+        .selectAll("myLabels")
+        .data(cs_data_ready);
+
+    //Create legend items
+    legendScatter
+        .enter()
+        .append("rect")
+        .attr("width", 15)
+        .attr("height", 15)
         .style("fill", d => cs_color(d.name))
-        .style("font-size", 15)
+        .attr("transform",
+            (d,w) => {
+                let x = 15;
+                let y = 5 + (16) * w;
+                return `translate(${x}, ${y})`;
+            })
+    ;
+
+    //Create legend labels
+    legendScatter
+        .enter()
+        .append("text")
+        .attr("x", 33)
+        .attr("y", (d, i) => 5 + (16) * i + 12)
+        .text(d => d.name)
+
+    ;
+
+    cs_svg.append("text")
+        .attr("transform",
+            "translate(" + (width2/2) + " ," +
+            (height2 + margin2.top + 260) + ")")
+        .style("text-anchor", "middle")
+        .text("Hour");
+
+    cs_svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin2.left)
+        .attr("x",0 - (height2 / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Count");
 })
