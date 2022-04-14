@@ -6,15 +6,6 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 20
 }).addTo(my_map);
 
-let my_icon = L.icon({
-    icon_url: 'my-icon.png', 
-    icon_size: [38,95], 
-    icon_anchor: [22, 94], 
-    popup_anchor: [-3, -76], 
-    shadow_url: 'my-icon-shadow.png', 
-    shadow_size: [68,95], 
-    shadow_anchor: [22,94]
-});
 
 L.marker([475500254, -73.98014437], {icon: my_icon}).addTo(my_map); 
 
