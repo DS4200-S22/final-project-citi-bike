@@ -63,7 +63,7 @@ const tooltip_cs = d3.select("body")
 
 // Add values to tooltip on mouseover, make tooltip div opaque  
 const mouseover_cs = function(event, d) {
-tooltip_cs.html("Station Name: " + d.name + "<br> Rides Ended Here: " + d.value + "At Hour:" + d.hour + "<br>") 
+tooltip_cs.html("Station Name: " + (d => d.name) + "<br> Rides Ended Here: " + d.value + " At Hour:" + d.hour + "<br>") 
 .style("opacity", 1);  
 }
 
