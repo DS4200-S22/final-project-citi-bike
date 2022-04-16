@@ -7,10 +7,10 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 }).addTo(my_map);
 
 let my_icon = L.icon({
-    icon_url: 'my-icon.png', 
+    icon_url: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png', 
     icon_size: [38,95], 
     popup_anchor: [-3,-76], 
-    shadow_url: 'mu-icon-shadow.png', 
+    shadow_url: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', 
     shadow_size: [68, 95], 
     shadow_anchor: [22,94]
 }); 
