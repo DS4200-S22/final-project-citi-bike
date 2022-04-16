@@ -32,7 +32,7 @@ ss_marker_4.bindPopup("<b> Bond St & Fulton St, Starting Rides: 23, Riders: 17 M
 ss_marker_5.bindPopup("<b> W 84 St & Broadway, Starting Rides: 21, Riders: 20 Members, 1 Casual </b>");
 
 
-let es_marker_1 = L.marker([40.75500254, -73.98014437], {icon: green_icon}).addTo(my_map); 
+let es_marker_1 = L.marker([40.75500254, -73.98014437]).addTo(my_map); 
 let es_marker_2 = L.marker([40.754164, -73.908906]).addTo(my_map); 
 let es_marker_3 = L.marker([40.72621788, -73.98379855]).addTo(my_map); 
 let es_marker_4 = L.marker([40.68539567, -73.97431458]).addTo(my_map); 
