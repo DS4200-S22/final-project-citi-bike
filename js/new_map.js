@@ -6,15 +6,13 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 20
 }).addTo(my_map);
 
-let green_icon = new L.icon({
-    icon_url: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png', 
-    shadow_url: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', 
+let green_icon =  new L.Icon({
+    icon_url: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadow_url: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
     icon_size: [25, 41], 
-    icon_anchor: [12,41], 
     popup_anchor: [1, -34], 
     shadow_size: [41, 41], 
 }); 
-
 
 
 //markers for start stations
@@ -32,7 +30,7 @@ ss_marker_4.bindPopup("<b> Bond St & Fulton St, Starting Rides: 23, Riders: 17 M
 ss_marker_5.bindPopup("<b> W 84 St & Broadway, Starting Rides: 21, Riders: 20 Members, 1 Casual </b>");
 
 
-let es_marker_1 = L.marker([40.75500254, -73.98014437]).addTo(my_map); 
+let es_marker_1 = L.marker([40.75500254, -73.98014437], {icon: green_icon}).addTo(my_map); 
 let es_marker_2 = L.marker([40.754164, -73.908906]).addTo(my_map); 
 let es_marker_3 = L.marker([40.72621788, -73.98379855]).addTo(my_map); 
 let es_marker_4 = L.marker([40.68539567, -73.97431458]).addTo(my_map); 
