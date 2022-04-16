@@ -31,10 +31,10 @@ ss_marker_5.bindPopup("<b> W 84 St & Broadway, Starting Rides: 21, Riders: 20 Me
 
 
 let es_marker_1 = L.marker([40.75500254, -73.98014437], {icon: greenIcon}).addTo(my_map); 
-let es_marker_2 = L.marker([40.754164, -73.908906]).addTo(my_map); 
-let es_marker_3 = L.marker([40.72621788, -73.98379855]).addTo(my_map); 
-let es_marker_4 = L.marker([40.68539567, -73.97431458]).addTo(my_map); 
-let es_marker_5 = L.marker([40.742753828659026, -74.00747358798981]).addTo(my_map);
+let es_marker_2 = L.marker([40.754164, -73.908906], {icon: greenIcon}).addTo(my_map); 
+let es_marker_3 = L.marker([40.72621788, -73.98379855], {icon: greenIcon}).addTo(my_map); 
+let es_marker_4 = L.marker([40.68539567, -73.97431458], {icon: greenIcon}).addTo(my_map); 
+let es_marker_5 = L.marker([40.742753828659026, -74.00747358798981], {icon: greenIcon}).addTo(my_map);
 
 
 es_marker_1.bindPopup("<b> Grand Army Plaza and Central Park South', 'Ending Rides: 105', 'Riders: 63 Casual</b>");
