@@ -6,10 +6,19 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 20
 }).addTo(my_map);
 
+let my_icon = L.icon({
+    icon_url: 'my-icon.png', 
+    icon_size: [38,95], 
+    popup_anchor: [-3,-76], 
+    shadow_url: 'mu-icon-shadow.png', 
+    shadow_size: [68, 95], 
+    shadow_anchor: [22,94]
+}); 
+
 
 
 //markers for start stations
-let ss_marker_1 = L.marker([40.72621788, -73.98379855]).addTo(my_map); 
+let ss_marker_1 = L.marker([40.72621788, -73.98379855], {icon: my_icon}).addTo(my_map); 
 let ss_marker_2 = L.marker([40.772828, -73.966853]).addTo(my_map); 
 let ss_marker_3 = L.marker([40.759604471387945, -73.92714411020279]).addTo(my_map); 
 let ss_marker_4 = L.marker([40.68962188790333, -73.98304268717766]).addTo(my_map); 
@@ -35,7 +44,6 @@ es_marker_2.bindPopup("<b> 34 Ave & 38 St','Ending Rides: 50', 'Riders: 31 Membe
 es_marker_3.bindPopup("<b> 1 Ave & E 18 St','Ending Rides: 50', 'Riders: 34 Members, 15 Casual</b>");
 es_marker_4.bindPopup("<b> Clinton St & Joralemon St','Ending Rides: 47', 'Riders: 30 Members, 17 Casual </b>");
 es_marker_5.bindPopup("<b> MacDougal St & Prince St','Ending Rides: 43', 'Riders: 28 Members, 15 Casual </b>");
-
 
 
 
