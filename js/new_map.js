@@ -68,7 +68,7 @@ let legend = L.control({position: "bottomleft"});
 legend.onAdd = function(my_map) {
     let div = L.DomUtil.create("div", "legend"); 
     
-    div.innerHTML += "<h4>End Stations</h4>"; 
+    div.innerHTML += "<h4>Station Type </h4>"; 
     div.innterHTML += '<i style="background: blue"></i><span>Start Stations</span><br>'; 
     div.innerHTML += '<i style="background: green"></i><span>End Stations</span><br>'; 
 
