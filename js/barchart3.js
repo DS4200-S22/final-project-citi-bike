@@ -126,9 +126,9 @@ const mouseleave6 = function(event, d) {
        .attr("height", (d) => (height2 - margin2.bottom) - yScale(d.count)) 
        .attr("width", xScale.bandwidth())
        .style("fill", (d) => color2(d.station_name)) 
-       .on("mouseover", mouseover5) 
-       .on("mousemove", mousemove5)
-       .on("mouseleave", mouseleave5);
+       .on("mouseover", mouseover6) 
+       .on("mousemove", mousemove6)
+       .on("mouseleave", mouseleave6);
 
 }); 
 
