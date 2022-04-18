@@ -72,7 +72,7 @@ svg_start.append("g")
       .style("text-anchor", "middle")
       .text("Station"); 
 
-   const tooltip4 = d3.select("body") 
+   const tooltip_bar = d3.select("body") 
                 .append("div") 
                 .attr('id', "tooltip2") 
                 .style("opacity", 0) 
@@ -85,8 +85,8 @@ svg_start.append("g")
 ; 
 
 // Add values to tooltip on mouseover, make tooltip div opaque  
- const mouseover5 = function(event, d) {
-  tooltip4.html("Station Name: " + d.station_name + "<br> Total Rides Ended Here: " + d.count + "<br>") 
+ const mouseover_bar = function(event, d) {
+  tooltip_bar.html("Station Name: " + d.station_name + "<br> Total Rides Ended Here: " + d.count + "<br>") 
           .style("opacity", 1)
   d3.select(this)
     .style("border-width", "20px")
@@ -97,14 +97,14 @@ svg_start.append("g")
 
 
 // Position tooltip to follow mouse 
-const mousemove5 = function(event, d) {
-  tooltip4.style("left", (event.pageX)+"px") 
+const mousemove_bar = function(event, d) {
+  tooltip_bar.style("left", (event.pageX)+"px") 
           .style("top", (event.pageY + yTooltipOffset2)+"px"); 
 }
 
 // Return tooltip to transparant when mouse leaves
-const mouseleave5 = function(event, d) { 
-  tooltip4.style("opacity", 0)
+const mouseleave_bar = function(event, d) { 
+  tooltip_bar.style("opacity", 0)
   d3.select(this)
     .style("border-width", "20px")
     .style("stroke", "none")
@@ -116,7 +116,7 @@ const mouseleave5 = function(event, d) {
   //Bars
 
   // Add bars to the webpage, bind events needed for tooltips 
-  svg4.selectAll(".bar") 
+  svg_start.selectAll(".bar") 
      .data(data2) 
      .enter()  
      .append("rect") 
@@ -126,9 +126,9 @@ const mouseleave5 = function(event, d) {
        .attr("height", (d) => (height2 - margin2.bottom) - yScale(d.count)) 
        .attr("width", xScale.bandwidth())
        .style("fill", (d) => color2(d.station_name)) 
-       .on("mouseover", mouseover6) 
-       .on("mousemove", mousemove6)
-       .on("mouseleave", mouseleave6);
+       .on("mouseover", mouseover_bar) 
+       .on("mousemove", mousemove_bar)
+       .on("mouseleave", mouseleave_bar);
 
 }); 
 
