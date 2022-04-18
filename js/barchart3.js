@@ -72,7 +72,7 @@ svg_start.append("g")
       .style("text-anchor", "middle")
       .text("Station"); 
 
-   const tooltip4 = d3.select("body") 
+    const tooltip5 = d3.select("body") 
                 .append("div") 
                 .attr('id', "tooltip2") 
                 .style("opacity", 0) 
@@ -85,7 +85,7 @@ svg_start.append("g")
 ; 
 
 // Add values to tooltip on mouseover, make tooltip div opaque  
- const mouseover5 = function(event, d) {
+ const mouseover6 = function(event, d) {
   tooltip4.html("Station Name: " + d.station_name + "<br> Total Rides Ended Here: " + d.count + "<br>") 
           .style("opacity", 1)
   d3.select(this)
@@ -97,13 +97,13 @@ svg_start.append("g")
 
 
 // Position tooltip to follow mouse 
-const mousemove5 = function(event, d) {
+const mousemove6 = function(event, d) {
   tooltip4.style("left", (event.pageX)+"px") 
           .style("top", (event.pageY + yTooltipOffset2)+"px"); 
 }
 
 // Return tooltip to transparant when mouse leaves
-const mouseleave5 = function(event, d) { 
+const mouseleave6 = function(event, d) { 
   tooltip4.style("opacity", 0)
   d3.select(this)
     .style("border-width", "20px")
@@ -112,3 +112,24 @@ const mouseleave5 = function(event, d) {
   ; 
 
 }
+
+  //Bars
+
+  // Add bars to the webpage, bind events needed for tooltips 
+  svg4.selectAll(".bar") 
+     .data(data2) 
+     .enter()  
+     .append("rect") 
+       .attr("class", "bar") 
+       .attr("x", (d,i) => xScale(i)) 
+       .attr("y", (d) => yScale(d.count)) 
+       .attr("height", (d) => (height2 - margin2.bottom) - yScale(d.count)) 
+       .attr("width", xScale.bandwidth())
+       .style("fill", (d) => color2(d.station_name)) 
+       .on("mouseover", mouseover5) 
+       .on("mousemove", mousemove5)
+       .on("mouseleave", mouseleave5);
+
+}); 
+
+
