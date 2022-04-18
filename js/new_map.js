@@ -64,13 +64,18 @@ es_marker_8.bindPopup("<b> E 11 & Avenue B','Ending Rides: 34', 'Riders: 25 Memb
 es_marker_9.bindPopup("<b> Baltic St & 5 Ave','Ending Rides: 24', 'Riders: 12 Members, 0 Casual </b>"); 
 es_marker_10.bindPopup("<b> Prospect Pl & 6 Ave','Ending Rides: 19', 'Riders: 10 Members, 0 Casual </b>"); 
 
-let map_legend = L.control({position: 'bottomright'}); 
-    map_legend.onAdd = function(my_map){
-        let div = L.DomUtil.create('div', 'legend'); 
-        labels = ['<strong>Station Type</strong>'], 
-        categories = ['Start Station', 'End Station']; 
-        return div; 
+let legend = L.control({position: "bottomleft"}); 
+legend.onAdd = function(my_map) {
+    let div = L.DomUtil.create("div", "legend"); 
+    
+    div.innerHTML += "<h4>End Stations</h4>"; 
+    div.innterHTML += '<i style="background: blue"></i><span>Start Stations</span><br>'; 
+    div.innerHTML += '<i style="background: green"></i><span>End Stations</span><br>'; 
 
-    }; 
-map_legend.addTo(my_map); 
+    return div; 
+
+
+}; 
+
+legend.addTo(my_map);  
 
