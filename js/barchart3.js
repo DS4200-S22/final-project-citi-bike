@@ -72,45 +72,43 @@ svg_start.append("g")
       .style("text-anchor", "middle")
       .text("Station"); 
 
-  const tooltip_start = d3.select("body") 
+   const tooltip4 = d3.select("body") 
                 .append("div") 
                 .attr('id', "tooltip2") 
                 .style("opacity", 0) 
-                .attr("class", "tooltip"); 
+                .attr("class", "tooltip")
+                .style("background-color", "lightgrey")
+                .style("border", "solid")
+                .style("border-width", "2px")
+                .style("border-radius", "5px")
+                .style("padding", "5px")
+; 
 
 // Add values to tooltip on mouseover, make tooltip div opaque  
- const mouseover5_start = function(event, d) {
-  tooltip_start.html("Station Name: " + d.start_station + "<br> Total Rides Started Here: " + d.count + "<br>") 
-          .style("opacity", 1);  
+ const mouseover5 = function(event, d) {
+  tooltip4.html("Station Name: " + d.station_name + "<br> Total Rides Ended Here: " + d.count + "<br>") 
+          .style("opacity", 1)
+  d3.select(this)
+    .style("border-width", "20px")
+    .style("stroke", "black")
+    .style("opacity", 2)
+  ;   
 }
 
+
 // Position tooltip to follow mouse 
-const mousemove5_start = function(event, d) {
-  tooltip_start.style("left", (event.pageX)+"px") 
+const mousemove5 = function(event, d) {
+  tooltip4.style("left", (event.pageX)+"px") 
           .style("top", (event.pageY + yTooltipOffset2)+"px"); 
 }
 
 // Return tooltip to transparant when mouse leaves
-const mouseleave5_start = function(event, d) { 
-  tooltip_start.style("opacity", 0); 
+const mouseleave5 = function(event, d) { 
+  tooltip4.style("opacity", 0)
+  d3.select(this)
+    .style("border-width", "20px")
+    .style("stroke", "none")
+    .style("opacity", 2)
+  ; 
 
 }
-
-  //Bars
-
-  // Add bars to the webpage, bind events needed for tooltips 
-  svg_start.selectAll(".bar") 
-     .data(data_start) 
-     .enter()  
-     .append("rect") 
-       .attr("class", "bar") 
-       .attr("x", (d,i) => xScale_start(i)) 
-       .attr("y", (d) => yScale_start(d.count)) 
-       .attr("height", (d) => (height2 - margin2.bottom) - yScale_start(d.count)) 
-       .attr("width", xScale_start.bandwidth())
-       .style("fill", (d) => color_start(d.start_station)) 
-       .on("mouseover", mouseover5_start) 
-       .on("mousemove", mousemove5_start)
-       .on("mouseleave", mouseleave5_start);
-
-}); 
