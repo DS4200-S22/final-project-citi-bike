@@ -66,16 +66,15 @@ es_marker_10.bindPopup("<b> Street Name: Prospect Pl & 6 Ave','Ending Rides: 19'
 
 
 let legend = L.control({position: "bottomleft"}); 
-legend.onAdd = function(my_map) {
-    let div = L.DomUtil.create("div", "legend"); 
-    
-    div.innerHTML += "<h4>Station Type </h4>"; 
-    div.innterHTML += '<i style="background: blue"></i><span>Start Stations</span><br>'; 
-    div.innerHTML += '<i style="background: green"></i><span>End Stations</span><br>'; 
+
+legend.onAdd = function(my_map){
+    let div = L.DomUtil.create("div", "legend")
+
+    div.innerHTML += "<h4>Station Type</h4>"; 
+    div.innerHTML += '<i style="background: #477AC2"></i><span>Start Station </span><br>';
+    div.innerHTML += '<i style="background: #448D40"></i><span>End Station</span><br>';
 
     return div; 
-
-
 }; 
 
 legend.addTo(my_map); 
