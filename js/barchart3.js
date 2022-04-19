@@ -43,14 +43,6 @@ d3.csv("data/start_stations.csv").then(function(data_start) {
      .call(d3.axisLeft(yScale_start)) 
      .attr("font-size", '20px');
 
-  svg_start.append("text")
-   .attr("transform", "rotate(-90)")
-   .attr("y", 0 - margin2.left)
-   .attr("x",0 - (height2 / 2))
-   .attr("dy", "1em")
-   .style("text-anchor", "middle")
-   .text("Count");
-
 
   // Add x axis to webpage  
 svg_start.append("g")
@@ -64,13 +56,6 @@ svg_start.append("g")
       .attr("dy", ".15em")
       .attr("transform", "rotate(-65)")
       .attr("font-size", '12px');
-
- svg_start.append("text")             
-      .attr("transform",
-            "translate(" + (width2/2) + " ," + 
-                           (height2 + margin2.top + 60) + ")")
-      .style("text-anchor", "middle")
-      .text("Station"); 
 
    const tooltip_bar = d3.select("body") 
                 .append("div") 
@@ -117,14 +102,14 @@ const mouseleave_bar = function(event, d) {
 
   // Add bars to the webpage, bind events needed for tooltips 
   svg_start.selectAll(".bar") 
-     .data(data2) 
+     .data(data_start) 
      .enter()  
      .append("rect") 
        .attr("class", "bar") 
-       .attr("x", (d,i) => xScale(i)) 
-       .attr("y", (d) => yScale(d.count)) 
-       .attr("height", (d) => (height2 - margin2.bottom) - yScale(d.count)) 
-       .attr("width", xScale.bandwidth())
+       .attr("x", (d,i) => xScale_start(i)) 
+       .attr("y", (d) => yScale_start(d.count)) 
+       .attr("height", (d) => (height2 - margin2.bottom) - yScale_start(d.count)) 
+       .attr("width", xScale_start.bandwidth())
        .style("fill", (d) => color2(d.station_name)) 
        .on("mouseover", mouseover_bar) 
        .on("mousemove", mousemove_bar)
