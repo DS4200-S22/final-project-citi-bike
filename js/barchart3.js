@@ -71,7 +71,7 @@ svg_start.append("g")
 
 // Add values to tooltip on mouseover, make tooltip div opaque  
  const mouseover_bar = function(event, d) {
-  tooltip_bar.html("Station Name: " + d.station_name + "<br> Total Rides Ended Here: " + d.count + "<br>") 
+  tooltip_bar.html("Station Name: " + d.start_station + "<br> Total Rides Started Here: " + d.count + "<br>") 
           .style("opacity", 1)
   d3.select(this)
     .style("border-width", "20px")
@@ -110,7 +110,7 @@ const mouseleave_bar = function(event, d) {
        .attr("y", (d) => yScale_start(d.count)) 
        .attr("height", (d) => (height2 - margin2.bottom) - yScale_start(d.count)) 
        .attr("width", xScale_start.bandwidth())
-       .style("fill", (d) => color2(d.station_name)) 
+       .style("fill", (d) => color2(d.start_station)) 
        .on("mouseover", mouseover_bar) 
        .on("mousemove", mousemove_bar)
        .on("mouseleave", mouseleave_bar);
